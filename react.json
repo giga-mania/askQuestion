@@ -1,0 +1,42 @@
+[
+  {
+    "text": "What are differences between controlled components and uncontrolled components?",
+    "answer": "In controlled components the value of form input elements is controlled by the component's state and it gets updated whenever the value of input changes. In uncontrolled components the value of form input element is not maintained by component's state. Instead, it's managed internally by form input element itself. The value is obtained using ref property of element or extracted from the DOM directly."
+  },
+  {
+    "text": "What is the significance of VirtualDOM in React, and how does it contribute to performance optimization?",
+    "answer": "The VirtualDOM is concept used by React to optimize the rendering process and imporve performance. It's an abstracted representation of the actual DOM in the form of JavaScript Object. It has a tree-like structure that mirrors the structure of the actual DOM. Each node of the tree represents a component or an element in the UI. Using virtualDOM React avoids unnecessary re-renders and reduces the number of DOM manipulations. When there are state or property updates, React creates new VirtualDOM by re-rendering the components and comparing it with the previous state of the VirtualDOM. In this process, known as reconciliation React performs Diffing algorithm to identify differences or updates between two states of VirtualDOM. As a result, VirtualDOM renders those changes on the real DOM instead of letting it to re-render again and again."
+  },
+  {
+    "text": "What are React portal, and how can they be used in building UI",
+    "answer": "React portals provide a way to render components outside the usual DOM hierarchy of a React application. When using React portal, components aren't rendered as a child of 'root' DOM structure. React portals commonly used for secanarios such as: modal and dialog boxes, tooltips and popovers that need to appear in specific positions on the screen."
+  },
+  {
+    "text": "What is the Context API in React, and how it is used to manage global state in an application?",
+    "answer": "The Context API provides a way to share data between components without passing props all the way down through the components tree. It creates a global state that can be accessed by any component within a application that is wrapped by the <Provider/> component of particular context state."
+  },
+  {
+    "text": "What is a server-side rendering (SSR) in React, and what are its benefits?",
+    "answer": "Server-side rendering (SSR) is the process of rendering React application on the server and sending pre-rendered HTML to the client. Instead of shipping React code to the client and letting browser to execute JavaScipt to render the page, HTML documents are ready-to-use pre-rendered on the server and sent to the client for further interaction. One of the benefits of SSR is improved performance by sending pre-renderd HTML to the client that reduces the time of first render. Another big advantage of SSR is search engine optimization (SEO). Search engines can better crawl and index server rendered components beacuse HTML document is already populated with content."
+  },
+  {
+    "text": "What is React Suspense, and how does it help in managing asynchronous rendering and data fetching in React applications?",
+    "answer": "React's <Suspense/> component provide a way to handle the suspenseful loading of components and data. The components that have some asynchronous operations to perform, React Suspense can be used to display fallback content while they are being loaded. Displaying spinner components as fallback can lead to better user experience."
+  },
+  {
+    "text": "What is the difference between useMemo and useCallback hooks in React?",
+    "answer": "In React useMemo and useCallback are used to optimize the performance of React components. While they may appear similar, they have distinct use cases. useMemo is used to memoize the result of a computation whereas useCallback is used to memoize a callback function. useMemo accepts two arguments: a function that performs the computation, and an array of dependencies. The function is executed during the rendering phase, and returned value is memoized. The momoized value is returned as long as none of the dependencies have changed. It helps to avoid unnecessary re-computations. Unlike useMemo, useCallback returns memoized callback function that it accepts as a first argument. Dependencies array of useCallback performs exactly same way as useMemo's. It will only change returned value if any of the dependencies change. useCallback helps to avoid unnecessary re-rendering caused by recreating same callback function on every re-render. This is particularly useful when passing callbacks as props to child components."
+  },
+  {
+    "text": "What is the purpose of useEffect hook in React, and when should it be used in React component lifecycle?",
+    "answer": "The useEffect hook is used to handle side effect in functional components. Data fetching, direct DOM manipulation, event subscription(timers) are considered as side effects. useEffect takes two arguments: a callback function and an optional array of dependencies. The callback function represents the side effect that will be performed/executed after the component has rendered. The dependency array specifies the values that the effect depends on. useEffect will re-run if any of its dependenices change. Effect with empty dependency array will only run on inital render. In other words, useEffect ensures that component stays in sync with the outside world."
+  },
+  {
+    "text": "What is React Router, and how does it work?",
+    "answer": "React Router is a popular library of handling routing in React applications. It allows to navigate between different views and pages withour requiring a full page reload. React Router works by associating different components with specific URLs or paths within an application. When a user navigates to certain URL, React Router matches that URL against the defined routes and renders the associated components for that route."
+  },
+  {
+    "text": "What is React Query and how does it facilitate data fetching and state managment in React applications?",
+    "answer": "React Query is a library that provides efficient way to handle asynchronous data fetching, caching, and state managment in React applications. It handles common data fetching scenarios, such as making GET, POST, PUT, DELETE requests, pagination, and managing data mutations. React Query provides various hooks to implement its key features such as data fetching and caching, data mutations and state managment, query invalitation and refetching, optimistic updates and error handling."
+  }
+]
